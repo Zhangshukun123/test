@@ -22,7 +22,6 @@ public class ItemAdapter extends BaseQuickAdapter<HomeEvent.DataBean, BaseViewHo
         ImageLoader.loadRoundImage(deadBean.imagePath, iv, 20);
 
 
-
     }
 
 

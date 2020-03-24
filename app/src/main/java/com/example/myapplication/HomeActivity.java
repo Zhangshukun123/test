@@ -111,9 +111,9 @@ public class HomeActivity extends AppCompatActivity {
     }
 
 
-    public class HomeViewPagerAdapter extends FragmentPagerAdapter {
+    private class HomeViewPagerAdapter extends FragmentPagerAdapter {
 
-        public HomeViewPagerAdapter(@NonNull FragmentManager fm, int behavior) {
+        HomeViewPagerAdapter(@NonNull FragmentManager fm, int behavior) {
             super(fm, behavior);
         }
 

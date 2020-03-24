@@ -27,4 +27,8 @@ public class MainActivity extends AppCompatActivity {
     public void videoList(View view) {
         startActivity(new Intent(this, HomeActivity.class));
     }
+
+    public void leak(View view) {
+        startActivity(new Intent(this, LeakCanaryActivity.class));
+    }
 }
