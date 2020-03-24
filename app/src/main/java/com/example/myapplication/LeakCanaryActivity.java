@@ -11,10 +11,16 @@ import org.greenrobot.eventbus.EventBus;
 
 public class LeakCanaryActivity extends AppCompatActivity {
 
+    private static Test test;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_leak_canary);
+
+
+
         //1.
         EventBus.getDefault().register(this);
 
@@ -27,5 +33,32 @@ public class LeakCanaryActivity extends AppCompatActivity {
         // 3.
         LoginManager.getInstance(this).dealData();
 
+
+        // 7.
+        test();
+
+
+
+        // 8
+        if(test==null){
+            test=new Test();
+        }
+
     }
+
+    private void test() {
+        new Thread(() -> {
+            while (true) {
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        }).start();
+    }
+    private class Test{
+
+    }
+
 }
