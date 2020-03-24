@@ -8,6 +8,8 @@ import android.webkit.WebView;
 import com.example.myapplication.leak.LoginManager;
 
 import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 
 public class LeakCanaryActivity extends AppCompatActivity {
 
@@ -18,7 +20,6 @@ public class LeakCanaryActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_leak_canary);
-
 
 
         //1.
@@ -38,10 +39,9 @@ public class LeakCanaryActivity extends AppCompatActivity {
         test();
 
 
-
         // 8
-        if(test==null){
-            test=new Test();
+        if (test == null) {
+            test = new Test();
         }
 
     }
@@ -57,7 +57,13 @@ public class LeakCanaryActivity extends AppCompatActivity {
             }
         }).start();
     }
-    private class Test{
+
+    private class Test {
+
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void Message(String mes) {
 
     }
 

@@ -9,4 +9,12 @@
     <solid android:color="#7f000000" />
 
 
+    <gradient
+        android:startColor="#ff000000"
+        android:endColor="#35000000"
+        android:type="linear"
+        android:angle="90"/>
+
+
+
 </shape>
